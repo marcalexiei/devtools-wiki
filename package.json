@@ -1,0 +1,38 @@
+{
+  "name": "@marcalexiei/curriculum-lol",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static site with a list of completed videogames",
+  "keywords": [],
+  "author": "Marco Pasqualetti <marco.pasqualetti@live.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcalexiei/curriculum-lol.git"
+  },
+  "type": "module",
+  "packageManager": "pnpm@9.5.0",
+  "scripts": {
+    "dev": "vite",
+    "dev:typecheck": "npm run typecheck -- --watch",
+    "build": "vite build",
+    "build:preview": "npm run build && vite preview",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "format": "biome format .",
+    "format:fix": "biome format . --write",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint . --write",
+    "codecheck": "npm run build && npm run lint && npm run format && npm run typecheck",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "solid-js": "1.8.18",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "typescript": "5.5.3",
+    "vite": "5.3.3",
+    "vite-plugin-solid": "2.10.2"
+  }
+}
