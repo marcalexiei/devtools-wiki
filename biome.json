@@ -1,5 +1,10 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "vcs": {
+    "clientKind": "git",
+    "useIgnoreFile": true,
+    "enabled": true
+  },
   "formatter": {
     "indentStyle": "space"
   },
@@ -19,6 +24,12 @@
           "options": {
             "syntax": "generic"
           }
+        },
+        "useNamingConvention": {
+          "level": "error",
+          "options": {
+            "strictCase": false
+          }
         }
       }
     }
@@ -27,10 +38,5 @@
     "formatter": {
       "quoteStyle": "single"
     }
-  },
-  "vcs": {
-    "clientKind": "git",
-    "useIgnoreFile": true,
-    "enabled": true
   }
 }
