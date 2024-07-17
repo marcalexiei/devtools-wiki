@@ -1,11 +1,10 @@
-
 import type { JSX } from 'solid-js';
-import { UIPage } from '../../components/UIPage/UIPage';
+import { AppPage } from '../../components/App/AppPage';
 
 export function Home(): JSX.Element {
   return (
-    <UIPage>
+    <AppPage>
       <h1>Home</h1>
-    </UIPage>
+    </AppPage>
   );
 }

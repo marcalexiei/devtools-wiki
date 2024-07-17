@@ -15,6 +15,8 @@ export const AppErrorBoundaryFallback: AppErrorBoundaryFallbackFunction = (
     message = err.message;
   }
 
+  console.error(err);
+
   return (
     <UIPageLayout>
       <h1>An error occurred</h1>
