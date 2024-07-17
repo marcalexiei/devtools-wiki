@@ -1,24 +1,23 @@
 import { render } from 'solid-js/web';
-import { ErrorBoundary, lazy, Suspense } from 'solid-js';
-import { Route, Router } from '@solidjs/router';
-import { AppErrorBoundaryFallback } from './components/AppErrorBoundaryFallback/AppErrorBoundaryFallback';
+import { ErrorBoundary, Suspense } from 'solid-js';
+import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
+import { AppErrorBoundaryFallback } from './components/App/AppErrorBoundaryFallback';
+import { App } from './App';
 
-const Home = lazy(() =>
-  import('./pages/Home/Home').then(({ Home }) => ({ default: Home })),
-);
+const queryClient = new QueryClient();
 
 // biome-ignore lint/style/noNonNullAssertion: not needed, this is always present
 const root = document.getElementById('root')!;
 
 render(
   () => (
-    <Suspense fallback={<>Loading</>}>
-      <ErrorBoundary fallback={AppErrorBoundaryFallback}>
-        <Router>
-          <Route path="/" component={Home} />
-        </Router>
-      </ErrorBoundary>
-    </Suspense>
+    <QueryClientProvider client={queryClient}>
+      <Suspense fallback={<>Loading</>}>
+        <ErrorBoundary fallback={AppErrorBoundaryFallback}>
+          <App />
+        </ErrorBoundary>
+      </Suspense>
+    </QueryClientProvider>
   ),
   root,
 );

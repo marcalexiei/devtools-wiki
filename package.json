@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@solidjs/router": "0.14.1",
+    "@tanstack/solid-query": "5.51.2",
     "solid-js": "1.8.18",
     "zod": "3.23.8"
   },
