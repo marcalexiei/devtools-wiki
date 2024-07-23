@@ -17,3 +17,13 @@ export function AppPage(props: AppPageProps): JSX.Element {
     </UIPageLayout>
   );
 }
+
+interface AppPageTitleProps {
+  children: JSX.Element;
+}
+
+export function AppPageTitle(props: AppPageTitleProps): JSX.Element {
+  const { children } = props;
+
+  return <h1>{children}</h1>;
+}

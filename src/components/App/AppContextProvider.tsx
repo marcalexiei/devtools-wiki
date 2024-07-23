@@ -1,8 +1,8 @@
 import { createContext, useContext, type JSX } from 'solid-js';
-import type { DevToolCategory } from '../../models/DevToolCategory';
+import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory';
 
 interface AppContextData {
-  categories: Array<DevToolCategory>;
+  categories: Array<DevToolArticleCategory>;
 }
 
 const AppContext = createContext<AppContextData>();

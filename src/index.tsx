@@ -4,7 +4,13 @@ import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
 import { AppErrorBoundaryFallback } from './components/App/AppErrorBoundaryFallback';
 import { App } from './App';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
 
 // biome-ignore lint/style/noNonNullAssertion: not needed, this is always present
 const root = document.getElementById('root')!;
