@@ -1,18 +1,45 @@
-import { For, type JSX } from 'solid-js';
+import { For, type ParentProps, type JSX } from 'solid-js';
+import { useMatch } from '@solidjs/router';
+
 import { useAppContext } from './AppContextProvider';
 
+interface AppPageNavigationLinkProps extends ParentProps {
+  href: string;
+}
+
+function AppPageNavigationLink(props: AppPageNavigationLinkProps): JSX.Element {
+  const match = useMatch(() => props.href);
+
+  return (
+    <a href={props.href} style={{ 'font-weight': match() ? 'bold' : 'normal' }}>
+      {props.children}
+    </a>
+  );
+}
+
 export function AppPageNavigation(): JSX.Element {
-  const asd = useAppContext();
+  const appContextData = useAppContext();
+
   return (
     <nav>
-      <ul>
+      <ul
+        style={{
+          'list-style': 'none',
+          margin: 0,
+          padding: 0,
+          display: 'flex',
+          gap: '0.5rem',
+        }}
+      >
         <li>
-          <a href="/">Home</a>
+          <AppPageNavigationLink href="/">Home</AppPageNavigationLink>
         </li>
-        <For each={asd.categories}>
+        <For each={appContextData.categories}>
           {(category) => (
             <li>
-              <a href={category.id}>{category.label}</a>
+              <AppPageNavigationLink href={category.id}>
+                {category.label}
+              </AppPageNavigationLink>
             </li>
           )}
         </For>
