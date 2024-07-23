@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "title": "React semantic names",
+      "description": "funny way to identify when some variable should not be used",
+      "url": "https://github.com/facebook/react/blob/80bff5397bf854750dbe7c286f61654ea58938c5/src/umd/ReactUMDEntry.js"
+    },
+    {
+      "title": "Git VCS explanation",
+      "description": "The original git explanation by Linus Torvalds... ",
+      "url": "https://github.com/git/git/blob/e83c5163316f89bfbde7d9ab23ca2e25604af290/README"
+    },
+    {
+      "title": "How to be a -10x Engineer",
+      "description": [
+        "+10x engineers may be mythical, but -10x engineers exist.",
+        "A complete guide about how to be a very !professional developer."
+      ],
+      "url": "https://taylor.town/-10x"
+    }
+  ]
+}
