@@ -11,7 +11,7 @@
     "url": "git+https://github.com/marcalexiei/curriculum-lol.git"
   },
   "type": "module",
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf",
   "scripts": {
     "dev": "vite",
     "dev:typecheck": "npm run typecheck -- --watch",
@@ -27,14 +27,14 @@
   },
   "dependencies": {
     "@solidjs/router": "0.14.1",
-    "@tanstack/solid-query": "5.51.2",
-    "solid-js": "1.8.18",
+    "@tanstack/solid-query": "5.51.21",
+    "solid-js": "1.8.19",
     "zod": "3.23.8"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "typescript": "5.5.3",
-    "vite": "5.3.3",
+    "typescript": "5.5.4",
+    "vite": "5.4.0",
     "vite-plugin-solid": "2.10.2"
   }
 }
