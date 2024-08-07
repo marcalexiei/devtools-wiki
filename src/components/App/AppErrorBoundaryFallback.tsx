@@ -1,9 +1,9 @@
 import type { ComponentProps, ErrorBoundary, JSX } from 'solid-js';
 import { UIPageLayout } from '../UIPage/UIPageLayout';
 
-type AppErrorBoundaryFallbackFunction = Extract<
+type AppErrorBoundaryFallbackFunction = Exclude<
   ComponentProps<typeof ErrorBoundary>['fallback'],
-  (...args: Array<unknown>) => unknown
+  JSX.Element
 >;
 
 export const AppErrorBoundaryFallback: AppErrorBoundaryFallbackFunction = (

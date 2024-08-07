@@ -33,13 +33,13 @@ export function App(): JSX.Element {
         <p>Loading...</p>
       </Match>
       <Match when={query.isError}>
-        <p>Error: {query.error.message}</p>
+        <p>Error: {query.error?.message}</p>
       </Match>
       <Match when={query.isSuccess}>
-        <AppContextProvider categories={query.data.categories}>
+        <AppContextProvider categories={query.data?.categories ?? []}>
           <Router>
             <Route path="/" component={Home} />
-            <For each={query.data.categories}>
+            <For each={query.data?.categories}>
               {(category) => (
                 <Route
                   path={category.id}
