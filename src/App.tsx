@@ -4,13 +4,17 @@ import { Router, Route } from '@solidjs/router';
 import { z } from 'zod';
 import { createQuery } from '@tanstack/solid-query';
 
-import { DEV_TOOL_CATEGORY_SCHEMA } from './models/DevToolCategory';
-import { AppPage } from './components/App/AppPage';
+import { DEV_TOOL_ARTICLE_CATEGORY_SCHEMA } from './models/DevToolArticleCategory';
 import { AppContextProvider } from './components/App/AppContextProvider';
 import { AppPage404 } from './components/App/AppPage404';
 
 const Home = lazy(() =>
   import('./pages/Home/Home').then(({ Home }) => ({ default: Home })),
+);
+const CategoryArticles = lazy(() =>
+  import('./pages/CategoryArticles/CategoryArticles').then(
+    ({ CategoryArticles }) => ({ default: CategoryArticles }),
+  ),
 );
 
 export function App(): JSX.Element {
@@ -20,7 +24,7 @@ export function App(): JSX.Element {
       const categoriesResponse = await import('./data/categories.json');
 
       const schema = z.object({
-        categories: z.array(DEV_TOOL_CATEGORY_SCHEMA),
+        categories: z.array(DEV_TOOL_ARTICLE_CATEGORY_SCHEMA),
       });
 
       return schema.parse(categoriesResponse);
@@ -33,21 +37,17 @@ export function App(): JSX.Element {
         <p>Loading...</p>
       </Match>
       <Match when={query.isError}>
-        <p>Error: {query.error.message}</p>
+        <p>Error: {query.error?.message}</p>
       </Match>
       <Match when={query.isSuccess}>
-        <AppContextProvider categories={query.data.categories}>
+        <AppContextProvider categories={query.data?.categories ?? []}>
           <Router>
             <Route path="/" component={Home} />
-            <For each={query.data.categories}>
+            <For each={query.data?.categories}>
               {(category) => (
                 <Route
                   path={category.id}
-                  component={() => (
-                    <AppPage>
-                      <h1>{category.label}</h1>
-                    </AppPage>
-                  )}
+                  component={() => <CategoryArticles category={category} />}
                 />
               )}
             </For>
