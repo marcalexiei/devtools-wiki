@@ -45,7 +45,12 @@ export function CategoryArticles(props: CategoryArticlesProps): JSX.Element {
               <ul style={{ 'list-style': 'none', margin: 0, padding: 0 }}>
                 <For each={query.data?.articles}>
                   {(article) => (
-                    <li>
+                    <li
+                      style={{
+                        'border-bottom': '1px solid black',
+                        'padding-bottom': '.5rem',
+                      }}
+                    >
                       <CategoryArticlesArticle article={article} />
                     </li>
                   )}
