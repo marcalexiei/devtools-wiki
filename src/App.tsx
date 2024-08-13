@@ -11,6 +11,11 @@ import { AppPage404 } from './components/App/AppPage404';
 const Home = lazy(() =>
   import('./pages/Home/Home').then(({ Home }) => ({ default: Home })),
 );
+const Outgoing = lazy(() =>
+  import('./pages/Outgoing/Outgoing').then(({ Outgoing }) => ({
+    default: Outgoing,
+  })),
+);
 const CategoryArticles = lazy(() =>
   import('./pages/CategoryArticles/CategoryArticles').then(
     ({ CategoryArticles }) => ({ default: CategoryArticles }),
@@ -43,6 +48,7 @@ export function App(): JSX.Element {
         <AppContextProvider categories={query.data?.categories ?? []}>
           <Router>
             <Route path="/" component={Home} />
+            <Route path="outgoing" component={Outgoing} />
             <For each={query.data?.categories}>
               {(category) => (
                 <Route
