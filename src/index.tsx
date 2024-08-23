@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
 import { AppErrorBoundaryFallback } from './components/App/AppErrorBoundaryFallback';
 import { App } from './App';
 
+import './style.scss';
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

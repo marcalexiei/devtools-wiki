@@ -13,10 +13,8 @@ interface AppContextProviderProps {
 }
 
 export function AppContextProvider(props: AppContextProviderProps) {
-  const { categories } = props;
-
   return (
-    <AppContext.Provider value={{ categories }}>
+    <AppContext.Provider value={{ categories: props.categories }}>
       {props.children}
     </AppContext.Provider>
   );

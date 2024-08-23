@@ -1,13 +1,18 @@
 import { UIPageLayout } from '../UIPage/UIPageLayout';
+import { AppPageTitle } from './AppPage';
 
 export function AppPage404() {
   return (
-    <UIPageLayout>
-      <h1>404 - Not found</h1>
+    <UIPageLayout
+      content={
+        <>
+          <AppPageTitle>404 - Not found</AppPageTitle>
 
-      <nav>
-        <a href="/">Return to home</a>
-      </nav>
-    </UIPageLayout>
+          <nav>
+            <a href="/">Return to home</a>
+          </nav>
+        </>
+      }
+    />
   );
 }

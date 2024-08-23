@@ -1,5 +1,6 @@
 import type { ComponentProps, ErrorBoundary, JSX } from 'solid-js';
 import { UIPageLayout } from '../UIPage/UIPageLayout';
+import { AppPageTitle } from './AppPage';
 
 type AppErrorBoundaryFallbackFunction = Exclude<
   ComponentProps<typeof ErrorBoundary>['fallback'],
@@ -18,14 +19,18 @@ export const AppErrorBoundaryFallback: AppErrorBoundaryFallbackFunction = (
   console.error(err);
 
   return (
-    <UIPageLayout>
-      <h1>An error occurred</h1>
+    <UIPageLayout
+      content={
+        <>
+          <AppPageTitle>An error occurred</AppPageTitle>
 
-      <p>Message: {message}</p>
+          <p>Message: {message}</p>
 
-      <button type="button" onClick={() => reset()}>
-        Try again
-      </button>
-    </UIPageLayout>
+          <button type="button" onClick={() => reset()}>
+            Try again
+          </button>
+        </>
+      }
+    />
   );
 };

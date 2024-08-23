@@ -1,11 +1,41 @@
 import type { JSX } from 'solid-js';
 
 interface UIPageLayoutProps {
-  children: JSX.Element;
+  content: JSX.Element;
+
+  header?: JSX.Element;
+  navigation?: JSX.Element;
+  footer?: JSX.Element;
 }
 
 export function UIPageLayout(props: UIPageLayoutProps): JSX.Element {
-  const { children } = props;
+  return (
+    <div
+      style={{
+        'min-height': '100vh',
+        display: 'flex',
+        'flex-direction': 'column',
+        'max-width': '740px',
+        margin: 'auto',
+      }}
+    >
+      {props.header && (
+        <>
+          {props.header}
+          <hr />
+        </>
+      )}
 
-  return <div style={{ 'max-width': '740px', margin: 'auto' }}>{children}</div>;
+      {props.navigation && (
+        <>
+          {props.navigation}
+          <hr />
+        </>
+      )}
+
+      <main style={{ 'flex-grow': 1 }}>{props.content}</main>
+
+      {props.footer}
+    </div>
+  );
 }

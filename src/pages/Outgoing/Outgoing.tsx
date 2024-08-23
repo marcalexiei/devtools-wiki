@@ -1,7 +1,9 @@
 import { createMemo, type JSX } from 'solid-js';
 import { useSearchParams } from '@solidjs/router';
-import { AppPage, AppPageTitle } from '../../components/App/AppPage';
+import { AppPageTitle } from '../../components/App/AppPage';
 import { AppPage404 } from '../../components/App/AppPage404';
+import { UIPageLayout } from '../../components/UIPage/UIPageLayout';
+import { AppHeader } from '../../components/App/AppHeader';
 
 export function Outgoing(): JSX.Element {
   const [searchParams] = useSearchParams<{ url: string }>();
@@ -32,26 +34,39 @@ export function Outgoing(): JSX.Element {
   const _urlInfo = urlInfo() as URL;
 
   return (
-    <AppPage>
-      <AppPageTitle>You are leaving the site</AppPageTitle>
+    <UIPageLayout
+      header={<AppHeader />}
+      content={
+        <>
+          <AppPageTitle>You are leaving the site</AppPageTitle>
 
-      <p>{_urlInfo.href}</p>
+          <div>
+            Your destination is:
+            <br />
+            <code style={{ 'word-break': 'break-word' }}>{_urlInfo.href}</code>
+          </div>
 
-      <hr />
+          <hr />
 
-      <dl>
-        <dt>Domain</dt>
-        <dd>{_urlInfo.host}</dd>
+          <dl>
+            <dt>Domain</dt>
+            <dd>{_urlInfo.host}</dd>
 
-        <dt>Path</dt>
-        <dd>{_urlInfo.pathname}</dd>
-      </dl>
+            <dt>Path</dt>
+            <dd>{_urlInfo.pathname}</dd>
+          </dl>
 
-      <hr />
+          <hr />
 
-      <a href={_urlInfo.href} target="_blank" rel="noreferrer noopener">
-        Go to external site
-      </a>
-    </AppPage>
+          <nav style={{ display: 'flex', gap: '.5rem' }}>
+            <a href={_urlInfo.href} target="_blank" rel="noreferrer noopener">
+              Continue to the external site
+            </a>
+
+            <a href="/">Back to home</a>
+          </nav>
+        </>
+      }
+    />
   );
 }
