@@ -1,20 +1,21 @@
 import type { JSX } from 'solid-js';
 import { UIPageLayout } from '../UIPage/UIPageLayout';
 import { AppPageNavigation } from './AppPageNavigation';
+import { AppFooter } from './AppFooter';
+import { AppHeader } from './AppHeader';
 
 interface AppPageProps {
   children: JSX.Element;
 }
 
 export function AppPage(props: AppPageProps): JSX.Element {
-  const { children } = props;
-
   return (
-    <UIPageLayout>
-      <AppPageNavigation />
-
-      {children}
-    </UIPageLayout>
+    <UIPageLayout
+      header={<AppHeader />}
+      navigation={<AppPageNavigation />}
+      content={props.children}
+      footer={<AppFooter />}
+    />
   );
 }
 
@@ -23,7 +24,5 @@ interface AppPageTitleProps {
 }
 
 export function AppPageTitle(props: AppPageTitleProps): JSX.Element {
-  const { children } = props;
-
-  return <h1>{children}</h1>;
+  return <h1>{props.children}</h1>;
 }

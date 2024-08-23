@@ -1,0 +1,16 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+hr {
+  margin: .5rem 0;
+  color: inherit;
+  border: 0;
+  border-top: 1px solid black;
+  opacity: 1;
+}

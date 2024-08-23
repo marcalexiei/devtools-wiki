@@ -16,9 +16,7 @@
     "rules": {
       "all": true,
       "style": {
-        "useShorthandArrayType": {
-          "level": "off"
-        },
+        "useShorthandArrayType": "off",
         "useConsistentArrayType": {
           "level": "error",
           "options": {
