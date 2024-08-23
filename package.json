@@ -1,8 +1,8 @@
 {
-  "name": "@marcalexiei/curriculum-lol",
+  "name": "@marcalexiei/devtools-wiki",
   "private": true,
   "version": "1.0.0",
-  "description": "Static site with a list of completed videogames",
+  "description": "Static site with a list of development resources",
   "keywords": [],
   "author": "Marco Pasqualetti <marco.pasqualetti@live.com>",
   "license": "MIT",
