@@ -1,4 +1,5 @@
-import { For, type ParentProps, type JSX } from 'solid-js';
+import { For } from 'solid-js';
+import type { ParentProps, JSX } from 'solid-js';
 import { useMatch } from '@solidjs/router';
 
 import { useAppContext } from './AppContextProvider';
