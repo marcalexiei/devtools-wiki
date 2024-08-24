@@ -1,24 +1,31 @@
-import { For, Match, Switch, type JSX } from 'solid-js';
+import { createMemo, Match, Switch } from 'solid-js';
+import type { JSX } from 'solid-js';
 import { z } from 'zod';
 import { createQuery } from '@tanstack/solid-query';
 import { AppPage, AppPageTitle } from '../../components/App/AppPage';
 import { DEV_TOOL_ARTICLE_SCHEMA } from '../../models/DevToolArticle';
 import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory';
-import { CategoryArticlesArticle } from './CategoryArticlesArticle';
+import { CategoryArticlesView } from './CategoryArticlesView';
+import { useAppContext } from '../../components/App/AppContextProvider';
+import { AppPage404 } from '../../components/App/AppPage404';
 
 interface CategoryArticlesProps {
-  category: DevToolArticleCategory;
+  categoryID: DevToolArticleCategory['id'];
 }
 
 export function CategoryArticles(props: CategoryArticlesProps): JSX.Element {
-  const { category } = props;
+  const categoryID = props.categoryID;
+
+  const appContextData = useAppContext();
+
+  const _categoryData = createMemo(() =>
+    appContextData.categories.find((it) => it.id === categoryID),
+  );
 
   const query = createQuery(() => ({
-    queryKey: ['articles', category.id],
+    queryKey: ['articles', categoryID],
     queryFn: async () => {
-      const articles = await import(
-        `../../data/categories/${category.id}.json`
-      );
+      const articles = await import(`../../data/categories/${categoryID}.json`);
 
       const schema = z.object({
         articles: z.array(DEV_TOOL_ARTICLE_SCHEMA),
@@ -26,11 +33,18 @@ export function CategoryArticles(props: CategoryArticlesProps): JSX.Element {
 
       return schema.parse(articles);
     },
+    enabled: !!_categoryData,
   }));
+
+  const categoryData = _categoryData();
+
+  if (!categoryData) {
+    return <AppPage404 />;
+  }
 
   return (
     <AppPage>
-      <AppPageTitle>Fun</AppPageTitle>
+      <AppPageTitle>{categoryData.label}</AppPageTitle>
 
       <Switch>
         <Match when={query.isPending}>
@@ -40,24 +54,7 @@ export function CategoryArticles(props: CategoryArticlesProps): JSX.Element {
           <p>Error: {query.error?.message}</p>
         </Match>
         <Match when={query.isSuccess}>
-          <Switch fallback={<p>No articles</p>}>
-            <Match when={query.data?.articles?.length}>
-              <ul style={{ 'list-style': 'none', margin: 0, padding: 0 }}>
-                <For each={query.data?.articles}>
-                  {(article) => (
-                    <li
-                      style={{
-                        'border-bottom': '1px solid black',
-                        'padding-bottom': '.5rem',
-                      }}
-                    >
-                      <CategoryArticlesArticle article={article} />
-                    </li>
-                  )}
-                </For>
-              </ul>
-            </Match>
-          </Switch>
+          <CategoryArticlesView articles={query?.data?.articles as never} />
         </Match>
       </Switch>
     </AppPage>

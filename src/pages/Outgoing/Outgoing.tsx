@@ -1,5 +1,5 @@
 import { createMemo, type JSX } from 'solid-js';
-import { useSearchParams } from '@solidjs/router';
+import { A, useSearchParams } from '@solidjs/router';
 import { AppPageTitle } from '../../components/App/AppPage';
 import { AppPage404 } from '../../components/App/AppPage404';
 import { UIPageLayout } from '../../components/UIPage/UIPageLayout';
@@ -63,7 +63,7 @@ export function Outgoing(): JSX.Element {
               Continue to the external site
             </a>
 
-            <a href="/">Back to home</a>
+            <A href="/">Back to home</A>
           </nav>
         </>
       }
