@@ -7,18 +7,16 @@ import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory
 import { CategoryArticlesArticle } from './CategoryArticlesArticle';
 
 interface CategoryArticlesProps {
-  category: DevToolArticleCategory;
+  categoryID: DevToolArticleCategory['id'];
 }
 
 export function CategoryArticles(props: CategoryArticlesProps): JSX.Element {
-  const { category } = props;
+  const categoryID = props.categoryID;
 
   const query = createQuery(() => ({
-    queryKey: ['articles', category.id],
+    queryKey: ['articles', categoryID],
     queryFn: async () => {
-      const articles = await import(
-        `../../data/categories/${category.id}.json`
-      );
+      const articles = await import(`../../data/categories/${categoryID}.json`);
 
       const schema = z.object({
         articles: z.array(DEV_TOOL_ARTICLE_SCHEMA),

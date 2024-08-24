@@ -1,3 +1,4 @@
+import { A } from '@solidjs/router';
 import type { JSX, ParentProps } from 'solid-js';
 
 interface LinkExternalProps extends ParentProps {
@@ -6,8 +7,8 @@ interface LinkExternalProps extends ParentProps {
 
 export function LinkExternal(props: LinkExternalProps): JSX.Element {
   return (
-    <a href={`/outgoing?url=${encodeURIComponent(props.url)}`}>
+    <A href={`/outgoing?url=${encodeURIComponent(props.url)}`}>
       {props.children}
-    </a>
+    </A>
   );
 }

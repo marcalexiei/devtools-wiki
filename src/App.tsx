@@ -1,28 +1,12 @@
-import { lazy, Switch, Match, For } from 'solid-js';
-import type { JSX } from 'solid-js';
-import { Router, Route } from '@solidjs/router';
+import { Switch, Match } from 'solid-js';
+import type { JSX, ParentProps } from 'solid-js';
 import { z } from 'zod';
 import { createQuery } from '@tanstack/solid-query';
 
 import { DEV_TOOL_ARTICLE_CATEGORY_SCHEMA } from './models/DevToolArticleCategory';
 import { AppContextProvider } from './components/App/AppContextProvider';
-import { AppPage404 } from './components/App/AppPage404';
 
-const Home = lazy(() =>
-  import('./pages/Home/Home').then(({ Home }) => ({ default: Home })),
-);
-const Outgoing = lazy(() =>
-  import('./pages/Outgoing/Outgoing').then(({ Outgoing }) => ({
-    default: Outgoing,
-  })),
-);
-const CategoryArticles = lazy(() =>
-  import('./pages/CategoryArticles/CategoryArticles').then(
-    ({ CategoryArticles }) => ({ default: CategoryArticles }),
-  ),
-);
-
-export function App(): JSX.Element {
+export function App(props: ParentProps): JSX.Element {
   const query = createQuery(() => ({
     queryKey: ['categories'],
     queryFn: async () => {
@@ -46,19 +30,7 @@ export function App(): JSX.Element {
       </Match>
       <Match when={query.isSuccess}>
         <AppContextProvider categories={query.data?.categories ?? []}>
-          <Router>
-            <Route path="/" component={Home} />
-            <Route path="outgoing" component={Outgoing} />
-            <For each={query.data?.categories}>
-              {(category) => (
-                <Route
-                  path={category.id}
-                  component={() => <CategoryArticles category={category} />}
-                />
-              )}
-            </For>
-            <Route path="*" component={AppPage404} />
-          </Router>
+          {props.children}
         </AppContextProvider>
       </Match>
     </Switch>

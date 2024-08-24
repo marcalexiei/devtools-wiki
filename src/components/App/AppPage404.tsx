@@ -1,3 +1,4 @@
+import { A } from '@solidjs/router';
 import { UIPageLayout } from '../UIPage/UIPageLayout';
 import { AppPageTitle } from './AppPage';
 
@@ -9,7 +10,7 @@ export function AppPage404() {
           <AppPageTitle>404 - Not found</AppPageTitle>
 
           <nav>
-            <a href="/">Return to home</a>
+            <A href="/">Return to home</A>
           </nav>
         </>
       }

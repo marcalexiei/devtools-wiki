@@ -1,6 +1,6 @@
 import { For } from 'solid-js';
 import type { ParentProps, JSX } from 'solid-js';
-import { useMatch } from '@solidjs/router';
+import { A } from '@solidjs/router';
 
 import { useAppContext } from './AppContextProvider';
 
@@ -9,12 +9,10 @@ interface AppPageNavigationLinkProps extends ParentProps {
 }
 
 function AppPageNavigationLink(props: AppPageNavigationLinkProps): JSX.Element {
-  const match = useMatch(() => props.href);
-
   return (
-    <a href={props.href} style={{ 'font-weight': match() ? 'bold' : 'normal' }}>
+    <A href={props.href} activeClass="fw-bold">
       {props.children}
-    </a>
+    </A>
   );
 }
 
@@ -33,12 +31,12 @@ export function AppPageNavigation(): JSX.Element {
         }}
       >
         <li>
-          <AppPageNavigationLink href="/">Home</AppPageNavigationLink>
+          <AppPageNavigationLink href="/home">Home</AppPageNavigationLink>
         </li>
         <For each={appContextData.categories}>
           {(category) => (
             <li>
-              <AppPageNavigationLink href={category.id}>
+              <AppPageNavigationLink href={`/category/${category.id}`}>
                 {category.label}
               </AppPageNavigationLink>
             </li>
