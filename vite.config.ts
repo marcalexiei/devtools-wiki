@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 
+import { APP_BASE_PATH } from './src/APP_BASE_PATH';
+
 // https://vitejs.dev/config/
 // biome-ignore lint/style/noDefaultExport: vite requires default export
 export default defineConfig({
-  base: '/devtools-wiki/',
+  base: `/${APP_BASE_PATH}/`,
   plugins: [solidPlugin()],
   build: {
     target: 'esnext',

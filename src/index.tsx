@@ -7,6 +7,7 @@ import { App } from './App';
 import { AppPage404 } from './components/App/AppPage404';
 
 import './style.scss';
+import { APP_BASE_PATH } from './APP_BASE_PATH';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,7 +36,7 @@ render(
     <QueryClientProvider client={queryClient}>
       <Suspense fallback={<>Loading</>}>
         <ErrorBoundary fallback={AppErrorBoundaryFallback}>
-          <Router base="devtools-wiki" root={App}>
+          <Router base={APP_BASE_PATH} root={App}>
             <Route path="/" component={() => <Navigate href="home" />} />
             <Route path="home" component={Home} />
             <Route path="outgoing" component={Outgoing} />
