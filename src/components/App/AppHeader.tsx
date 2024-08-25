@@ -1,10 +1,11 @@
 import type { JSX } from 'solid-js';
+import { A } from '@solidjs/router';
 
 export function AppHeader(): JSX.Element {
   return (
     <header>
-      <a
-        href="/"
+      <A
+        href="/home"
         style={{
           display: 'block',
           'margin-top': '1rem',
@@ -12,7 +13,7 @@ export function AppHeader(): JSX.Element {
         }}
       >
         MarcAlexiei's devtool wiki
-      </a>
+      </A>
     </header>
   );
 }
