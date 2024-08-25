@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
+/// <reference types="@testing-library/jest-dom" />
 import { defineConfig } from 'vitest/config';
 import solidPlugin from 'vite-plugin-solid';
 // import devtools from 'solid-devtools/vite';
