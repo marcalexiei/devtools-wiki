@@ -32,4 +32,11 @@ pnpm codecheck
 
 ## Build and deploy
 
-TBA
+Deploy is performed via GitHub Actions, hence is completely automated:
+
+1. When merging on `main` `CI` workflow is run.
+2. After its completion  `CD` workflow is triggered
+3. If `CI` workflow is completed successfully then `CD` workflow build the site and performs the deploy using `actions/deploy-pages`
+
+> [!NOTE]
+> If needed `CD` workflow can be executed manually from the GitHub Actions UI
