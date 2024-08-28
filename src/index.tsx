@@ -1,21 +1,14 @@
 import { render } from 'solid-js/web';
 import { ErrorBoundary, lazy, Suspense } from 'solid-js';
 import { Navigate, Route, Router } from '@solidjs/router';
-import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
+import { QueryClientProvider } from '@tanstack/solid-query';
 import { AppErrorBoundaryFallback } from './components/App/AppErrorBoundaryFallback';
 import { App } from './App';
 import { AppPage404 } from './components/App/AppPage404';
+import { APP_BASE_PATH } from './APP_BASE_PATH';
+import { AppQueryClient } from './AppQueryClient';
 
 import './style.scss';
-import { APP_BASE_PATH } from './APP_BASE_PATH';
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-    },
-  },
-});
 
 const Home = lazy(() =>
   import('./pages/Home/Home').then(({ Home }) => ({ default: Home })),
@@ -33,7 +26,7 @@ const CategoryArticles = lazy(() =>
 
 render(
   () => (
-    <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={AppQueryClient}>
       <Suspense fallback={<>Loading</>}>
         <ErrorBoundary fallback={AppErrorBoundaryFallback}>
           <Router base={APP_BASE_PATH} root={App}>
