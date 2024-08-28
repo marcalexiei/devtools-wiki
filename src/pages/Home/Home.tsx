@@ -30,12 +30,6 @@ export function Home(): JSX.Element {
       </p>
 
       <p>Still here? I'm impressed</p>
-
-      <p>
-        You must be an <i>onanist</i> or a <i>masochist</i>...
-      </p>
-
-      <p>If your are a onanist you will have a good company here...</p>
     </AppPage>
   );
 }
