@@ -1,0 +1,39 @@
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      dependencies-solid:
+        applies-to: "version-updates"
+        dependency-type: "production"
+        patterns:
+          - "@solidjs/router"
+          - "solid-js"
+
+      dev-dependencies-build:
+        applies-to: "version-updates"
+        dependency-type: "development"
+        patterns:
+          - "sass-embedded"
+          - "vite"
+          - "vite-plugin-solid"
+          - "typescript"
+
+      dev-dependencies-test:
+        applies-to: "version-updates"
+        dependency-type: "development"
+        patterns:
+          - "@testing-library/*"
+          - "@solidjs/testing-library"
+          - "jsdom"
+          - "vitest"

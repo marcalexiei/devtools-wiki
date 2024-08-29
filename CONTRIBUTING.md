@@ -30,6 +30,10 @@ To run all checks locally:
 pnpm codecheck
 ```
 
+## Adding dependency or a dev dependency
+
+When installing a new dependency check if it can be added to one of dependabot groups on [dependabot.yml](.github/dependabot.yml)
+
 ## Build and deploy
 
 Deploy is performed via GitHub Actions, hence is completely automated:
