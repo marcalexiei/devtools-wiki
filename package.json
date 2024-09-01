@@ -23,7 +23,7 @@
     "format:fix": "biome format . --write",
     "lint": "biome lint .",
     "lint:fix": "biome lint . --write",
-    "codecheck": "npm run build && npm run test && npm run lint && npm run format && npm run typecheck"
+    "codecheck": "npm run build && npm run test -- --run && npm run lint && npm run format && npm run typecheck"
   },
   "dependencies": {
     "@solidjs/router": "0.14.3",

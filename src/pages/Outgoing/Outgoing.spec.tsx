@@ -3,6 +3,7 @@ import { render, screen } from '@solidjs/testing-library';
 import { createMemoryHistory, MemoryRouter, Route } from '@solidjs/router';
 import { Outgoing } from './Outgoing';
 import { AppPage404 } from '../../components/App/AppPage404';
+import { ThemeContextProvider } from '../../components/Theme/ThemeContext';
 
 vitest.mock('../../components/App/AppPage404', () => ({
   // biome-ignore lint/style/useNamingConvention: mocking component name
@@ -64,9 +65,11 @@ describe('<Outgoing />', () => {
     history.set({ value: `/?url=${encodeURIComponent(outgoingURL)}` });
 
     render(() => (
-      <MemoryRouter history={history}>
-        <Route path={'*'} component={Outgoing} />
-      </MemoryRouter>
+      <ThemeContextProvider>
+        <MemoryRouter history={history}>
+          <Route path={'*'} component={Outgoing} />
+        </MemoryRouter>
+      </ThemeContextProvider>
     ));
 
     expect(AppPage404).not.toHaveBeenCalled();

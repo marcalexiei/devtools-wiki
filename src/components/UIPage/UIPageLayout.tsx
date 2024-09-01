@@ -16,6 +16,7 @@ export function UIPageLayout(props: UIPageLayoutProps): JSX.Element {
         display: 'flex',
         'flex-direction': 'column',
         'max-width': '740px',
+        padding: '0 1rem',
         margin: 'auto',
       }}
     >

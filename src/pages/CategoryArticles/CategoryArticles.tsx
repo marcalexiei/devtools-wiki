@@ -6,7 +6,7 @@ import { AppPage, AppPageTitle } from '../../components/App/AppPage';
 import { DEV_TOOL_ARTICLE_SCHEMA } from '../../models/DevToolArticle';
 import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory';
 import { CategoryArticlesView } from './CategoryArticlesView';
-import { useAppContext } from '../../components/App/AppContextProvider';
+import { useAppContext } from '../../components/App/AppContext';
 import { AppPage404 } from '../../components/App/AppPage404';
 
 interface CategoryArticlesProps {

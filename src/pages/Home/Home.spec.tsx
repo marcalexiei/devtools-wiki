@@ -3,7 +3,8 @@ import { render, screen } from '@solidjs/testing-library';
 import type { JSX, ParentProps } from 'solid-js';
 import { createMemoryHistory, MemoryRouter, Route } from '@solidjs/router';
 import { Home } from './Home';
-import { AppContextProvider } from '../../components/App/AppContextProvider';
+import { AppContextProvider } from '../../components/App/AppContext';
+import { ThemeContextProvider } from '../../components/Theme/ThemeContext';
 
 describe('<Home />', () => {
   function Wrapper(props: ParentProps): JSX.Element {
@@ -11,9 +12,11 @@ describe('<Home />', () => {
 
     return (
       <AppContextProvider categories={[]}>
-        <MemoryRouter history={history}>
-          <Route path={'*'} component={() => props.children} />
-        </MemoryRouter>
+        <ThemeContextProvider>
+          <MemoryRouter history={history}>
+            <Route path={'*'} component={() => props.children} />
+          </MemoryRouter>
+        </ThemeContextProvider>
       </AppContextProvider>
     );
   }
