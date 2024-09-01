@@ -13,14 +13,14 @@ updates:
       interval: "weekly"
     open-pull-requests-limit: 10
     groups:
-      dependencies-solid:
+      deps-solid:
         applies-to: "version-updates"
         dependency-type: "production"
         patterns:
           - "@solidjs/router"
           - "solid-js"
 
-      dev-dependencies-build:
+      dev-deps-build:
         applies-to: "version-updates"
         dependency-type: "development"
         patterns:
@@ -29,11 +29,11 @@ updates:
           - "vite-plugin-solid"
           - "typescript"
 
-      dev-dependencies-test:
+      dev-deps-test:
         applies-to: "version-updates"
         dependency-type: "development"
         patterns:
           - "@testing-library/*"
           - "@solidjs/testing-library"
-          - "jsdom"
+          - "happy-dom"
           - "vitest"

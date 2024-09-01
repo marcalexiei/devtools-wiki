@@ -19,7 +19,7 @@ export default defineConfig({
     port: 3000,
   },
   test: {
-    environment: 'jsdom',
+    environment: 'happy-dom',
     globals: true,
     setupFiles: ['node_modules/@testing-library/jest-dom/vitest'],
     // if you have few tests, try commenting this
