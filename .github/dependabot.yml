@@ -24,6 +24,7 @@ updates:
         applies-to: "version-updates"
         dependency-type: "development"
         patterns:
+          - "@types/node"
           - "sass-embedded"
           - "vite"
           - "vite-plugin-solid"
