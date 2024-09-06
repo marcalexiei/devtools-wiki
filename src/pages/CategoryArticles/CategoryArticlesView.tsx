@@ -3,6 +3,8 @@ import type { JSX } from 'solid-js';
 import type { DevToolArticle } from '../../models/DevToolArticle';
 import { CategoryArticlesArticle } from './CategoryArticlesArticle';
 
+import './CategoryArticlesView.scss';
+
 interface CategoryArticlesViewProps {
   articles: Array<DevToolArticle>;
 }
@@ -13,15 +15,10 @@ export function CategoryArticlesView(
   return (
     <Switch fallback={<p>No articles</p>}>
       <Match when={props.articles.length}>
-        <ul style={{ 'list-style': 'none', margin: 0, padding: 0 }}>
+        <ul class="category-articles-view">
           <For each={props.articles}>
             {(article) => (
-              <li
-                style={{
-                  'border-bottom': '1px solid black',
-                  'padding-bottom': '.5rem',
-                }}
-              >
+              <li>
                 <CategoryArticlesArticle article={article} />
               </li>
             )}

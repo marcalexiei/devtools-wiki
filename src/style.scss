@@ -9,6 +9,9 @@
   --text-color: black;
   --border-color: black;
   --link-color: blue;
+
+  --bg-variant-1: lightblue;
+  --bg-variant-1-active: #3fbbe4;
 }
 
 [data-theme="dark"]:root {
@@ -16,6 +19,9 @@
   --text-color: white;
   --border-color: white;
   --link-color: lightblue;
+
+  --bg-variant-1: lightblue;
+  --bg-variant-1-active: #4285f4;
 }
 
 body {

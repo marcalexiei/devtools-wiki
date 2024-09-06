@@ -1,0 +1,14 @@
+.category-articles-view {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+}

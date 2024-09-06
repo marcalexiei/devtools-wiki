@@ -1,0 +1,31 @@
+.ui-switch label {
+  cursor: pointer;
+  position: relative;
+
+  label + label {
+    margin-left: 15px;
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+
+    & + span {
+      display: inline-block;
+      color: var(--text-color);
+      border-radius: 50%;
+      padding: 0.5rem;
+      transition: background-color 0.4s;
+
+      svg {
+        display: inline-block;
+        fill: currentColor;
+        vertical-align: -0.1875em; /* magical number to vertically align icons */
+      }
+    }
+
+    &:checked + span {
+      background-color: var(--bg-variant-1-active);
+    }
+  }
+}
