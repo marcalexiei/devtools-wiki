@@ -24,7 +24,7 @@ export default defineConfig({
     setupFiles: ['node_modules/@testing-library/jest-dom/vitest'],
     // if you have few tests, try commenting this
     // out to improve performance:
-    isolate: false,
+    isolate: true,
   },
   build: {
     target: 'esnext',
