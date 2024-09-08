@@ -2,7 +2,7 @@ import type { JSX } from 'solid-js';
 import { UIPageLayout } from '../UIPage/UIPageLayout';
 import { AppPageNavigation } from './AppPageNavigation';
 import { AppFooter } from './AppFooter';
-import { AppHeader } from './AppHeader';
+import { AppHeader } from './Header/AppHeader';
 
 interface AppPageProps {
   children: JSX.Element;

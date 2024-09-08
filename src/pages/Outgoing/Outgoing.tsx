@@ -3,7 +3,7 @@ import { A, useSearchParams } from '@solidjs/router';
 import { AppPageTitle } from '../../components/App/AppPage';
 import { AppPage404 } from '../../components/App/AppPage404';
 import { UIPageLayout } from '../../components/UIPage/UIPageLayout';
-import { AppHeader } from '../../components/App/AppHeader';
+import { AppHeader } from '../../components/App/Header/AppHeader';
 
 export function Outgoing(): JSX.Element {
   const [searchParams] = useSearchParams<{ url: string }>();

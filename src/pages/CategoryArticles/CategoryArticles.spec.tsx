@@ -4,13 +4,14 @@ import { describe, expect, it, vitest, afterEach } from 'vitest';
 import { QueryClientProvider } from '@tanstack/solid-query';
 import { createMemoryHistory, MemoryRouter, Route } from '@solidjs/router';
 
-import { AppContextProvider } from '../../components/App/AppContextProvider';
+import { AppContextProvider } from '../../components/App/AppContext';
 import { AppQueryClient } from '../../AppQueryClient';
 import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory';
 import type { DevToolArticle } from '../../models/DevToolArticle';
 import { AppPage404 } from '../../components/App/AppPage404';
 
 import { CategoryArticles } from './CategoryArticles';
+import { ThemeContextProvider } from '../../components/Theme/ThemeContext';
 
 const CATEGORIES_MOCK: Array<DevToolArticleCategory> = [
   {
@@ -69,13 +70,15 @@ describe('<CategoryArticles />', () => {
 
     function Wrapper(props: ParentProps) {
       return (
-        <QueryClientProvider client={AppQueryClient}>
-          <AppContextProvider categories={CATEGORIES_MOCK}>
-            <MemoryRouter history={history}>
-              <Route component={() => props.children} />
-            </MemoryRouter>
-          </AppContextProvider>
-        </QueryClientProvider>
+        <ThemeContextProvider>
+          <QueryClientProvider client={AppQueryClient}>
+            <AppContextProvider categories={CATEGORIES_MOCK}>
+              <MemoryRouter history={history}>
+                <Route component={() => props.children} />
+              </MemoryRouter>
+            </AppContextProvider>
+          </QueryClientProvider>
+        </ThemeContextProvider>
       );
     }
 

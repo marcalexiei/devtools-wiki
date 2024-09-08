@@ -1,17 +1,51 @@
+*,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+:root {
+  --body-bg: white;
+  --text-color: black;
+  --border-color: black;
+  --link-color: blue;
+
+  --bg-variant-1: lightblue;
+  --bg-variant-1-active: #3fbbe4;
+}
+
+[data-theme="dark"]:root {
+  --body-bg: black;
+  --text-color: white;
+  --border-color: white;
+  --link-color: lightblue;
+
+  --bg-variant-1: lightblue;
+  --bg-variant-1-active: #4285f4;
+}
+
 body {
   margin: 0;
+  background: var(--body-bg);
+  color: var(--text-color);
+
+  @media (prefers-reduced-motion: no-preference) {
+    &.theme-change-animation-active {
+      transition: background-color ease-in-out 300ms, color ease-in-out 300ms;
+    }
+  }
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
 }
 
 hr {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   color: inherit;
   border: 0;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--border-color);
   opacity: 1;
 }
 

@@ -4,7 +4,8 @@ import { z } from 'zod';
 import { createQuery } from '@tanstack/solid-query';
 
 import { DEV_TOOL_ARTICLE_CATEGORY_SCHEMA } from './models/DevToolArticleCategory';
-import { AppContextProvider } from './components/App/AppContextProvider';
+import { AppContextProvider } from './components/App/AppContext';
+import { UIPageLayoutLoading } from './components/UIPage/UIPageLayoutLoading';
 
 export function App(props: ParentProps): JSX.Element {
   const query = createQuery(() => ({
@@ -23,7 +24,7 @@ export function App(props: ParentProps): JSX.Element {
   return (
     <Switch>
       <Match when={query.isPending}>
-        <p>Loading...</p>
+        <UIPageLayoutLoading />
       </Match>
       <Match when={query.isError}>
         <p>Error: {query.error?.message}</p>
