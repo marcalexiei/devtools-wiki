@@ -87,6 +87,7 @@ export function ThemeContextProvider(props: ThemeContextProviderProps) {
 
 export function useThemeContext() {
   const value = useContext(ThemeContext);
+
   if (value === undefined) {
     throw new Error(
       'useThemeContext must be used within a ThemeContextProvider',
