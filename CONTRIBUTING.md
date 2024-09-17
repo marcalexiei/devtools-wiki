@@ -44,3 +44,7 @@ Deploy is performed via GitHub Actions, hence is completely automated:
 
 > [!NOTE]
 > If needed `CD` workflow can be executed manually from the GitHub Actions UI
+
+## 404 management
+
+TODO explanation on 404 redirect
