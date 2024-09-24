@@ -25,19 +25,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
 
       - name: Run ${{ matrix.script }}
         run: pnpm run ${{ matrix.script }}
