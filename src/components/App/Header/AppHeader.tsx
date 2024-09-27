@@ -20,7 +20,7 @@ export function AppHeader(): JSX.Element {
           'font-size': '1.5rem',
         }}
       >
-        MarcAlexiei's devtool wiki
+        MarcAlexiei's devtools wiki
       </A>
 
       <AppHeaderThemeSwitch />
