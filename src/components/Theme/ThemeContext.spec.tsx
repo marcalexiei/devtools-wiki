@@ -5,6 +5,8 @@ import { ThemeContextProvider, useThemeContext } from './ThemeContext';
 describe('ThemeContext', () => {
   afterEach(() => {
     localStorage.clear();
+
+    vitest.useRealTimers();
   });
 
   describe('defaults', () => {
@@ -155,5 +157,21 @@ describe('ThemeContext', () => {
     unmount();
 
     expect(htmlNode.getAttribute('data-theme')).toBeNull();
+  });
+
+  it('should add `theme-change-animation-active` class to body with a short delay after being rendered', () => {
+    vitest.useFakeTimers();
+
+    render(() => <ThemeContextProvider>Theme</ThemeContextProvider>);
+
+    expect(
+      document.body.classList.contains('theme-change-animation-active'),
+    ).toBeFalsy();
+
+    vitest.advanceTimersByTime(350);
+
+    expect(
+      document.body.classList.contains('theme-change-animation-active'),
+    ).toBeTruthy();
   });
 });
