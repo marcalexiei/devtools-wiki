@@ -47,4 +47,15 @@ Deploy is performed via GitHub Actions, hence is completely automated:
 
 ## 404 management
 
-TODO explanation on 404 redirect
+Github routing doesn't allow nested routes to be resolved with the root `index.html`:
+
+- if a user open the site, navigate between pages and then reloads the application via browser
+- user loads directly a nested page URLs
+
+ends up in a 404 page.
+
+To avoid this behavior the `404.html` page, which github pages renders in all the following scenarios,
+includes a script that reads the path from the current `window.location` and performs a redirect to
+`/?{path}`.
+On the main entry point if location has a query it will be used as `url` parameter
+in `window.history.replaceState` invocation.
