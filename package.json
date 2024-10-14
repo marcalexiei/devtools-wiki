@@ -35,7 +35,7 @@
     "@biomejs/biome": "1.9.3",
     "@solidjs/testing-library": "0.8.10",
     "@testing-library/jest-dom": "6.5.0",
-    "@types/node": "20.16.5",
+    "@types/node": "20.16.11",
     "happy-dom": "15.7.4",
     "sass-embedded": "1.79.5",
     "typescript": "5.6.3",
