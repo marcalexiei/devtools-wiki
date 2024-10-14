@@ -11,19 +11,19 @@
     "url": "git+https://github.com/marcalexiei/devtools-wiki.git"
   },
   "type": "module",
-  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b",
+  "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4",
   "scripts": {
     "dev": "vite",
-    "dev:typecheck": "npm run typecheck -- --watch",
+    "dev:typecheck": "pnpm run typecheck -- --watch",
     "build": "vite build",
-    "build:preview": "npm run build && vite preview",
+    "build:preview": "pnpm run build && vite preview",
     "test": "vitest",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "format": "biome format .",
     "format:fix": "biome format . --write",
     "lint": "biome lint .",
     "lint:fix": "biome lint . --write",
-    "codecheck": "npm run build && npm run test -- --run && npm run lint && npm run format && npm run typecheck"
+    "codecheck": "pnpm run build && pnpm run test --run && pnpm run lint && pnpm run format && pnpm run typecheck"
   },
   "dependencies": {
     "@solidjs/router": "0.14.5",
@@ -32,14 +32,14 @@
     "zod": "3.23.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.2",
+    "@biomejs/biome": "1.9.3",
     "@solidjs/testing-library": "0.8.10",
     "@testing-library/jest-dom": "6.5.0",
     "@types/node": "20.16.5",
     "happy-dom": "15.7.4",
-    "sass-embedded": "1.79.3",
-    "typescript": "5.6.2",
-    "vite": "5.4.7",
+    "sass-embedded": "1.79.5",
+    "typescript": "5.6.3",
+    "vite": "5.4.8",
     "vite-plugin-solid": "2.10.2",
     "vitest": "2.1.2"
   }
