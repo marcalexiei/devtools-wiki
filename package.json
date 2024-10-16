@@ -34,13 +34,13 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.3",
     "@solidjs/testing-library": "0.8.10",
-    "@testing-library/jest-dom": "6.5.0",
+    "@testing-library/jest-dom": "6.6.1",
     "@types/node": "20.16.11",
     "happy-dom": "15.7.4",
     "sass-embedded": "1.79.5",
     "typescript": "5.6.3",
     "vite": "5.4.9",
     "vite-plugin-solid": "2.10.2",
-    "vitest": "2.1.2"
+    "vitest": "2.1.3"
   }
 }
