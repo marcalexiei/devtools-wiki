@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@solidjs/router':
-        specifier: 0.14.8
-        version: 0.14.8(solid-js@1.9.2)
+        specifier: 0.14.10
+        version: 0.14.10(solid-js@1.9.2)
       '@tanstack/solid-query':
         specifier: 5.59.13
         version: 5.59.13(solid-js@1.9.2)
@@ -26,7 +26,7 @@ importers:
         version: 1.9.4
       '@solidjs/testing-library':
         specifier: 0.8.10
-        version: 0.8.10(@solidjs/router@0.14.8(solid-js@1.9.2))(solid-js@1.9.2)
+        version: 0.8.10(@solidjs/router@0.14.10(solid-js@1.9.2))(solid-js@1.9.2)
       '@testing-library/jest-dom':
         specifier: 6.6.2
         version: 6.6.2
@@ -470,8 +470,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@solidjs/router@0.14.8':
-    resolution: {integrity: sha512-S+rD5Twp0820cM03wEIYtb7/4KN7Cfr3BP+qPIqb7IXO/SZ72tWqHEMQsmcjDbr4yVfpA+5Sq0Y+xcq09y1gQA==}
+  '@solidjs/router@0.14.10':
+    resolution: {integrity: sha512-5B8LVgvvXijfXyXWPVLUm7RQ05BhjIpAyRkYVDZtrR3OaSvftXobWc6qSEwk4ICLoGi/IE9CUp2LUdCBIs9AXg==}
     peerDependencies:
       solid-js: ^1.8.6
 
@@ -1627,16 +1627,16 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.24.0':
     optional: true
 
-  '@solidjs/router@0.14.8(solid-js@1.9.2)':
+  '@solidjs/router@0.14.10(solid-js@1.9.2)':
     dependencies:
       solid-js: 1.9.2
 
-  '@solidjs/testing-library@0.8.10(@solidjs/router@0.14.8(solid-js@1.9.2))(solid-js@1.9.2)':
+  '@solidjs/testing-library@0.8.10(@solidjs/router@0.14.10(solid-js@1.9.2))(solid-js@1.9.2)':
     dependencies:
       '@testing-library/dom': 10.4.0
       solid-js: 1.9.2
     optionalDependencies:
-      '@solidjs/router': 0.14.8(solid-js@1.9.2)
+      '@solidjs/router': 0.14.10(solid-js@1.9.2)
 
   '@tanstack/query-core@5.59.13': {}
 
