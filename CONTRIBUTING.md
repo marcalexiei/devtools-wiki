@@ -2,19 +2,7 @@
 
 ## Setup
 
-This repository uses:
-
-- `node` via [`nvm`](https://github.com/nvm-sh)
-- `pnpm` as package manager via [`corepack`].
-
-```shell
-# install nvm
-nvm use
-```
-
-```shell
-corepack use pnpm
-```
+[https://marcalexiei.github.io/contribute/setup-pnpm-nvm.html](https://marcalexiei.github.io/contribute/setup-pnpm-nvm.html)
 
 ## Development
 
@@ -27,7 +15,7 @@ pnpm dev
 To run all checks locally:
 
 ```shell
-pnpm codecheck
+pnpm check-all
 ```
 
 ## Adding dependency or a dev dependency
@@ -44,6 +32,10 @@ Deploy is performed via GitHub Actions, hence is completely automated:
 
 > [!NOTE]
 > If needed `CD` workflow can be executed manually from the GitHub Actions UI
+
+## Commit rules
+
+[https://marcalexiei.github.io/contribute/commit-rules.html](https://marcalexiei.github.io/contribute/commit-rules.html)
 
 ## 404 management
 
