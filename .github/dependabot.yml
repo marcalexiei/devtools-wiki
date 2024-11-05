@@ -4,23 +4,23 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     open-pull-requests-limit: 10
 
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     open-pull-requests-limit: 10
     groups:
-      deps-solid:
+      solid:
         applies-to: "version-updates"
         dependency-type: "production"
         patterns:
           - "@solidjs/router"
           - "solid-js"
 
-      dev-deps-build:
+      dev-build:
         applies-to: "version-updates"
         dependency-type: "development"
         patterns:
@@ -30,7 +30,7 @@ updates:
           - "vite-plugin-solid"
           - "typescript"
 
-      dev-deps-test:
+      dev-test:
         applies-to: "version-updates"
         dependency-type: "development"
         patterns:
