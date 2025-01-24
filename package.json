@@ -35,12 +35,12 @@
     "@biomejs/biome": "1.9.4",
     "@solidjs/testing-library": "0.8.10",
     "@testing-library/jest-dom": "6.6.3",
-    "@types/node": "22.10.3",
-    "happy-dom": "16.3.0",
-    "sass-embedded": "1.83.0",
-    "typescript": "5.7.2",
-    "vite": "6.0.6",
+    "@types/node": "22.10.10",
+    "happy-dom": "16.7.2",
+    "sass-embedded": "1.83.4",
+    "typescript": "5.7.3",
+    "vite": "6.0.11",
     "vite-plugin-solid": "2.11.0",
-    "vitest": "3.0.0-beta.3"
+    "vitest": "3.0.3"
   }
 }
