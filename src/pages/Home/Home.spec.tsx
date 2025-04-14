@@ -1,10 +1,10 @@
-import { describe, it, expect } from 'vitest';
+import { createMemoryHistory, MemoryRouter, Route } from '@solidjs/router';
 import { render, screen } from '@solidjs/testing-library';
 import type { JSX, ParentProps } from 'solid-js';
-import { createMemoryHistory, MemoryRouter, Route } from '@solidjs/router';
-import { Home } from './Home';
+import { describe, expect, it } from 'vitest';
 import { AppContextProvider } from '../../components/App/AppContext';
 import { ThemeContextProvider } from '../../components/Theme/ThemeContext';
+import { Home } from './Home';
 
 describe('<Home />', () => {
   function Wrapper(props: ParentProps): JSX.Element {

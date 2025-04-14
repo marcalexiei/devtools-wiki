@@ -1,4 +1,5 @@
-import { splitProps, type JSX, type ParentProps } from 'solid-js';
+import type { JSX, ParentProps } from 'solid-js';
+import { splitProps } from 'solid-js';
 
 import './UISwitch.scss';
 

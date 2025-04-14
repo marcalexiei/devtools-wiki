@@ -1,8 +1,8 @@
-import { describe, expect, it } from 'vitest';
 import { render, screen, waitFor } from '@solidjs/testing-library';
-import { App } from './App';
-import type { ParentProps } from 'solid-js';
 import { QueryClientProvider } from '@tanstack/solid-query';
+import type { ParentProps } from 'solid-js';
+import { describe, expect, it } from 'vitest';
+import { App } from './App';
 import { AppQueryClient } from './AppQueryClient';
 
 describe('<App />', () => {

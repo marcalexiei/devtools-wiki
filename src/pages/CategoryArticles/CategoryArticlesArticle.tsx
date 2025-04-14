@@ -1,6 +1,7 @@
-import { For, type JSX } from 'solid-js';
-import type { DevToolArticle } from '../../models/DevToolArticle';
+import type { JSX } from 'solid-js';
+import { For } from 'solid-js';
 import { LinkExternal } from '../../components/LinkExternal/LinkExternal';
+import type { DevToolArticle } from '../../models/DevToolArticle';
 
 interface CategoryArticlesProps {
   article: DevToolArticle;

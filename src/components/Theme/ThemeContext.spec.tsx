@@ -1,5 +1,5 @@
 import { render, renderHook } from '@solidjs/testing-library';
-import { describe, expect, it, vitest, afterEach } from 'vitest';
+import { afterEach, describe, expect, it, vitest } from 'vitest';
 import { ThemeContextProvider, useThemeContext } from './ThemeContext';
 
 describe('ThemeContext', () => {

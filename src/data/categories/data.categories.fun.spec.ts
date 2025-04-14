@@ -1,8 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
-
-import funJSON from './fun.json';
 import { DEV_TOOL_ARTICLE_SCHEMA } from '../../models/DevToolArticle';
+import funJSON from './fun.json';
 
 describe('data - categories - fun', () => {
   it('should follow schema', () => {

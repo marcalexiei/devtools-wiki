@@ -1,17 +1,15 @@
-import type { JSX, ParentProps } from 'solid-js';
-import { render, screen, waitFor } from '@solidjs/testing-library';
-import { describe, expect, it, vitest, afterEach } from 'vitest';
-import { QueryClientProvider } from '@tanstack/solid-query';
 import { createMemoryHistory, MemoryRouter, Route } from '@solidjs/router';
-
-import { AppContextProvider } from '../../components/App/AppContext';
+import { render, screen, waitFor } from '@solidjs/testing-library';
+import { QueryClientProvider } from '@tanstack/solid-query';
+import type { JSX, ParentProps } from 'solid-js';
+import { afterEach, describe, expect, it, vitest } from 'vitest';
 import { AppQueryClient } from '../../AppQueryClient';
-import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory';
-import type { DevToolArticle } from '../../models/DevToolArticle';
+import { AppContextProvider } from '../../components/App/AppContext';
 import { AppPage404 } from '../../components/App/AppPage404';
-
-import { CategoryArticles } from './CategoryArticles';
 import { ThemeContextProvider } from '../../components/Theme/ThemeContext';
+import type { DevToolArticle } from '../../models/DevToolArticle';
+import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory';
+import { CategoryArticles } from './CategoryArticles';
 
 const CATEGORIES_MOCK: Array<DevToolArticleCategory> = [
   {
