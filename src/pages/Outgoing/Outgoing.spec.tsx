@@ -1,9 +1,9 @@
-import { describe, expect, it, vitest, afterEach } from 'vitest';
-import { render, screen } from '@solidjs/testing-library';
 import { createMemoryHistory, MemoryRouter, Route } from '@solidjs/router';
-import { Outgoing } from './Outgoing';
+import { render, screen } from '@solidjs/testing-library';
+import { afterEach, describe, expect, it, vitest } from 'vitest';
 import { AppPage404 } from '../../components/App/AppPage404';
 import { ThemeContextProvider } from '../../components/Theme/ThemeContext';
+import { Outgoing } from './Outgoing';
 
 vitest.mock('../../components/App/AppPage404', () => ({
   // biome-ignore lint/style/useNamingConvention: mocking component name

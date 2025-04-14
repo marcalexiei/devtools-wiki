@@ -1,12 +1,12 @@
+import type { Accessor, JSX, Setter } from 'solid-js';
 import {
   createContext,
   createEffect,
   createSignal,
-  onMount,
   onCleanup,
+  onMount,
   useContext,
 } from 'solid-js';
-import type { Setter, JSX, Accessor } from 'solid-js';
 
 export type ThemeValue = 'system' | 'light' | 'dark';
 

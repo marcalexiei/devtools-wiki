@@ -1,14 +1,14 @@
-import { render } from 'solid-js/web';
-import { ErrorBoundary, lazy, Suspense } from 'solid-js';
-import { Router, Route, Navigate } from '@solidjs/router';
+import { Navigate, Route, Router } from '@solidjs/router';
 import { QueryClientProvider } from '@tanstack/solid-query';
+import { ErrorBoundary, lazy, Suspense } from 'solid-js';
+import { render } from 'solid-js/web';
 import { App } from './App';
+import { APP_BASE_PATH } from './AppBasePath';
 import { AppQueryClient } from './AppQueryClient';
 import { AppErrorBoundaryFallback } from './components/App/AppErrorBoundaryFallback';
 import { AppPage404 } from './components/App/AppPage404';
 import { ThemeContextProvider } from './components/Theme/ThemeContext';
 import { UIPageLayoutLoading } from './components/UIPage/UIPageLayoutLoading';
-import { APP_BASE_PATH } from './AppBasePath';
 
 import './style.scss';
 

@@ -16,7 +16,7 @@ export const AppErrorBoundaryFallback: AppErrorBoundaryFallbackFunction = (
     message = err.message;
   }
 
-  // biome-ignore lint/suspicious/noConsole: debug purpose
+  // biome-ignore lint/suspicious/noConsole: debug
   console.error(err);
 
   return (

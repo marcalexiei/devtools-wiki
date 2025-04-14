@@ -1,11 +1,11 @@
 import { fireEvent, render, screen } from '@solidjs/testing-library';
 import { describe, expect, it, vitest } from 'vitest';
-import { AppHeaderThemeSwitch } from './AppHeaderThemeSwitch';
 import {
   ThemeContextProvider,
   type ThemeValue,
   type useThemeContext,
 } from '../../../Theme/ThemeContext';
+import { AppHeaderThemeSwitch } from './AppHeaderThemeSwitch';
 
 const mocks = vitest.hoisted(() => {
   let testThemeValue: ThemeValue = 'system';

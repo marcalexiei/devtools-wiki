@@ -1,11 +1,10 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 /// <reference types="@testing-library/jest-dom" />
-import { defineConfig } from 'vitest/config';
 import solidPlugin from 'vite-plugin-solid';
+import { defineConfig } from 'vitest/config';
 // import devtools from 'solid-devtools/vite';
 
-// biome-ignore lint/style/noDefaultExport: vite requires default export
 export default defineConfig({
   test: {
     environment: 'happy-dom',

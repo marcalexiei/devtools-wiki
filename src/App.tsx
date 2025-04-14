@@ -1,11 +1,10 @@
-import { Switch, Match } from 'solid-js';
-import type { JSX, ParentProps } from 'solid-js';
-import { z } from 'zod';
 import { createQuery } from '@tanstack/solid-query';
-
-import { DEV_TOOL_ARTICLE_CATEGORY_SCHEMA } from './models/DevToolArticleCategory';
+import type { JSX, ParentProps } from 'solid-js';
+import { Match, Switch } from 'solid-js';
+import { z } from 'zod';
 import { AppContextProvider } from './components/App/AppContext';
 import { UIPageLayoutLoading } from './components/UIPage/UIPageLayoutLoading';
+import { DEV_TOOL_ARTICLE_CATEGORY_SCHEMA } from './models/DevToolArticleCategory';
 
 export function App(props: ParentProps): JSX.Element {
   const query = createQuery(() => ({

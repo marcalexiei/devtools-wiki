@@ -1,13 +1,13 @@
-import { createMemo, Match, Switch } from 'solid-js';
-import type { JSX } from 'solid-js';
-import { z } from 'zod';
 import { createQuery } from '@tanstack/solid-query';
+import type { JSX } from 'solid-js';
+import { createMemo, Match, Switch } from 'solid-js';
+import { z } from 'zod';
+import { useAppContext } from '../../components/App/AppContext';
 import { AppPage, AppPageTitle } from '../../components/App/AppPage';
+import { AppPage404 } from '../../components/App/AppPage404';
 import { DEV_TOOL_ARTICLE_SCHEMA } from '../../models/DevToolArticle';
 import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory';
 import { CategoryArticlesView } from './CategoryArticlesView';
-import { useAppContext } from '../../components/App/AppContext';
-import { AppPage404 } from '../../components/App/AppPage404';
 
 interface CategoryArticlesProps {
   categoryID: DevToolArticleCategory['id'];
