@@ -37,12 +37,12 @@
     "@solidjs/testing-library": "0.8.10",
     "@testing-library/jest-dom": "6.6.3",
     "@types/node": "22.14.1",
-    "happy-dom": "17.4.4",
+    "happy-dom": "18.0.1",
     "sass-embedded": "1.86.3",
     "typescript": "5.8.3",
     "vite": "6.2.6",
     "vite-plugin-solid": "2.11.6",
-    "vitest": "3.1.1"
+    "vitest": "3.2.4"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
