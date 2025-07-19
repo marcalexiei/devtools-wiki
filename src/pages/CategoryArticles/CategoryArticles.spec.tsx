@@ -44,7 +44,6 @@ const ARTICLES_MOCK: Array<DevToolArticle> = [
 ];
 
 vitest.mock('../../components/App/AppPage404', () => ({
-  // biome-ignore lint/style/useNamingConvention: mocking component name
   AppPage404: vitest.fn(),
 }));
 
@@ -83,7 +82,7 @@ describe('<CategoryArticles />', () => {
     return { ...render(ui, { wrapper: Wrapper }), history };
   }
 
-  it('should display loading ', async () => {
+  it('should display loading ', () => {
     renderCategoryArticles(() => <CategoryArticles categoryID="fun" />);
 
     screen.getByText('Loading...');

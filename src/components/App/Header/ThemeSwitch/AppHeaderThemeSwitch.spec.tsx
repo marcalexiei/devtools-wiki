@@ -19,7 +19,6 @@ const mocks = vitest.hoisted(() => {
 
 vitest.mock('../../../Theme/ThemeContext', async (importOriginal) => {
   const actual = await importOriginal<{
-    // biome-ignore lint/style/useNamingConvention: mocking
     ThemeContextProvider: typeof ThemeContextProvider;
     useThemeContext: typeof useThemeContext;
   }>();

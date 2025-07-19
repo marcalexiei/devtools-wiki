@@ -6,7 +6,6 @@ import { ThemeContextProvider } from '../../components/Theme/ThemeContext';
 import { Outgoing } from './Outgoing';
 
 vitest.mock('../../components/App/AppPage404', () => ({
-  // biome-ignore lint/style/useNamingConvention: mocking component name
   AppPage404: vitest.fn(),
 }));
 
