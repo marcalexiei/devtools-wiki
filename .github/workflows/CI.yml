@@ -1,9 +1,5 @@
 name: CI
 
-concurrency:
-  group: "${{ github.workflow }} - ${{ github.head_ref || github.ref }}"
-  cancel-in-progress: true
-
 on:
   push:
     branches:
@@ -12,6 +8,13 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
+concurrency:
+  group: "${{ github.workflow }} - ${{ github.head_ref || github.ref }}"
+  cancel-in-progress: true
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -19,7 +22,12 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        script: [format, lint, typecheck, build, test]
+        script:
+          - format
+          - lint
+          - typecheck
+          - build
+          - test
 
     steps:
       - name: Checkout
