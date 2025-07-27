@@ -3,13 +3,13 @@ import { render, screen, waitFor } from '@solidjs/testing-library';
 import { QueryClientProvider } from '@tanstack/solid-query';
 import type { JSX, ParentProps } from 'solid-js';
 import { afterEach, describe, expect, it, vitest } from 'vitest';
-import { AppQueryClient } from '../../AppQueryClient';
-import { AppContextProvider } from '../../components/App/AppContext';
-import { AppPage404 } from '../../components/App/AppPage404';
-import { ThemeContextProvider } from '../../components/Theme/ThemeContext';
-import type { DevToolArticle } from '../../models/DevToolArticle';
-import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory';
-import { CategoryArticles } from './CategoryArticles';
+import { AppQueryClient } from '../../AppQueryClient.ts';
+import { AppContextProvider } from '../../components/App/AppContext.tsx';
+import { AppPage404 } from '../../components/App/AppPage404.tsx';
+import { ThemeContextProvider } from '../../components/Theme/ThemeContext.tsx';
+import type { DevToolArticle } from '../../models/DevToolArticle.ts';
+import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory.ts';
+import { CategoryArticles } from './CategoryArticles.tsx';
 
 const CATEGORIES_MOCK: Array<DevToolArticleCategory> = [
   {
@@ -103,8 +103,8 @@ describe('<CategoryArticles />', () => {
       ARTICLES_MOCK.length,
     );
 
-    for (const it of ARTICLES_MOCK) {
-      screen.getByRole('heading', { name: it.title });
+    for (const article of ARTICLES_MOCK) {
+      screen.getByRole('heading', { name: article.title });
     }
   });
 });

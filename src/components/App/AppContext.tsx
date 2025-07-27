@@ -1,6 +1,6 @@
 import type { JSX } from 'solid-js';
 import { createContext, useContext } from 'solid-js';
-import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory';
+import type { DevToolArticleCategory } from '../../models/DevToolArticleCategory.ts';
 
 interface AppContextData {
   categories: Array<DevToolArticleCategory>;

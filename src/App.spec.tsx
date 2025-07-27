@@ -2,8 +2,8 @@ import { render, screen, waitFor } from '@solidjs/testing-library';
 import { QueryClientProvider } from '@tanstack/solid-query';
 import type { ParentProps } from 'solid-js';
 import { describe, expect, it } from 'vitest';
-import { App } from './App';
-import { AppQueryClient } from './AppQueryClient';
+import { App } from './App.tsx';
+import { AppQueryClient } from './AppQueryClient.ts';
 
 describe('<App />', () => {
   function Wrapper(props: ParentProps) {

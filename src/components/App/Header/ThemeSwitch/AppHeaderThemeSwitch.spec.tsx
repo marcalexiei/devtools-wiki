@@ -4,8 +4,8 @@ import {
   ThemeContextProvider,
   type ThemeValue,
   type useThemeContext,
-} from '../../../Theme/ThemeContext';
-import { AppHeaderThemeSwitch } from './AppHeaderThemeSwitch';
+} from '../../../Theme/ThemeContext.tsx';
+import { AppHeaderThemeSwitch } from './AppHeaderThemeSwitch.tsx';
 
 const mocks = vitest.hoisted(() => {
   let testThemeValue: ThemeValue = 'system';

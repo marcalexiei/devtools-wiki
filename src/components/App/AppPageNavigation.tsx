@@ -2,7 +2,7 @@ import { A } from '@solidjs/router';
 import type { JSX, ParentProps } from 'solid-js';
 import { For } from 'solid-js';
 
-import { useAppContext } from './AppContext';
+import { useAppContext } from './AppContext.tsx';
 
 interface AppPageNavigationLinkProps extends ParentProps {
   href: string;

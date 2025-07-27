@@ -1,6 +1,6 @@
 import { A } from '@solidjs/router';
 import type { JSX } from 'solid-js';
-import { AppHeaderThemeSwitch } from './ThemeSwitch/AppHeaderThemeSwitch';
+import { AppHeaderThemeSwitch } from './ThemeSwitch/AppHeaderThemeSwitch.tsx';
 
 export function AppHeader(): JSX.Element {
   return (

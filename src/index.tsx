@@ -2,13 +2,13 @@ import { Navigate, Route, Router } from '@solidjs/router';
 import { QueryClientProvider } from '@tanstack/solid-query';
 import { ErrorBoundary, lazy, Suspense } from 'solid-js';
 import { render } from 'solid-js/web';
-import { App } from './App';
-import { APP_BASE_PATH } from './AppBasePath';
-import { AppQueryClient } from './AppQueryClient';
-import { AppErrorBoundaryFallback } from './components/App/AppErrorBoundaryFallback';
-import { AppPage404 } from './components/App/AppPage404';
-import { ThemeContextProvider } from './components/Theme/ThemeContext';
-import { UIPageLayoutLoading } from './components/UIPage/UIPageLayoutLoading';
+import { App } from './App.tsx';
+import { APP_BASE_PATH } from './AppBasePath.ts';
+import { AppQueryClient } from './AppQueryClient.ts';
+import { AppErrorBoundaryFallback } from './components/App/AppErrorBoundaryFallback.tsx';
+import { AppPage404 } from './components/App/AppPage404.tsx';
+import { ThemeContextProvider } from './components/Theme/ThemeContext.tsx';
+import { UIPageLayoutLoading } from './components/UIPage/UIPageLayoutLoading.tsx';
 
 import './style.scss';
 
@@ -18,16 +18,16 @@ if (window.location.search.startsWith('?/')) {
 }
 
 const Home = lazy(() =>
-  import('./pages/Home/Home').then(({ Home: Cmp }) => ({ default: Cmp })),
+  import('./pages/Home/Home.tsx').then(({ Home: Cmp }) => ({ default: Cmp })),
 );
 
 const Outgoing = lazy(() =>
-  import('./pages/Outgoing/Outgoing').then(({ Outgoing: Cmp }) => ({
+  import('./pages/Outgoing/Outgoing.tsx').then(({ Outgoing: Cmp }) => ({
     default: Cmp,
   })),
 );
 const CategoryArticles = lazy(() =>
-  import('./pages/CategoryArticles/CategoryArticles').then(
+  import('./pages/CategoryArticles/CategoryArticles.tsx').then(
     ({ CategoryArticles: Cmp }) => ({ default: Cmp }),
   ),
 );

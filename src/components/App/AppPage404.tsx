@@ -1,6 +1,6 @@
 import { A } from '@solidjs/router';
-import { UIPageLayout } from '../UIPage/UIPageLayout';
-import { AppPageTitle } from './AppPage';
+import { UIPageLayout } from '../UIPage/UIPageLayout.tsx';
+import { AppPageTitle } from './AppPage.tsx';
 
 export function AppPage404() {
   return (

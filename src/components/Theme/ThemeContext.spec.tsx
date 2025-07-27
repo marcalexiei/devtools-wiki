@@ -1,6 +1,6 @@
 import { render, renderHook } from '@solidjs/testing-library';
 import { afterEach, describe, expect, it, vitest } from 'vitest';
-import { ThemeContextProvider, useThemeContext } from './ThemeContext';
+import { ThemeContextProvider, useThemeContext } from './ThemeContext.tsx';
 
 describe('ThemeContext', () => {
   afterEach(() => {
@@ -67,10 +67,10 @@ describe('ThemeContext', () => {
 
   describe('media query prefer-color-schema', () => {
     type MediaQueryChangeHandler = (event: { matches: boolean }) => void;
-    let mediaQueryChangeHandler: MediaQueryChangeHandler = () => undefined;
+    let mediaQueryChangeHandler: MediaQueryChangeHandler = () => {};
 
     const removeEventListenerSpy = vitest.fn().mockImplementation(() => {
-      mediaQueryChangeHandler = () => undefined;
+      mediaQueryChangeHandler = () => {};
     });
     vitest.spyOn(window, 'matchMedia').mockImplementation(
       (_mediaQuery: string) =>

@@ -1,6 +1,6 @@
 import type { ComponentProps, ErrorBoundary, JSX } from 'solid-js';
-import { UIPageLayout } from '../UIPage/UIPageLayout';
-import { AppPageTitle } from './AppPage';
+import { UIPageLayout } from '../UIPage/UIPageLayout.tsx';
+import { AppPageTitle } from './AppPage.tsx';
 
 type AppErrorBoundaryFallbackFunction = Exclude<
   ComponentProps<typeof ErrorBoundary>['fallback'],

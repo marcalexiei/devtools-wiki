@@ -1,4 +1,4 @@
-import { UIPageLayout } from './UIPageLayout';
+import { UIPageLayout } from './UIPageLayout.tsx';
 
 export function UIPageLayoutLoading() {
   return (

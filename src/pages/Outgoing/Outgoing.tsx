@@ -1,10 +1,10 @@
 import { A, useSearchParams } from '@solidjs/router';
 import type { JSX } from 'solid-js';
 import { createMemo } from 'solid-js';
-import { AppPageTitle } from '../../components/App/AppPage';
-import { AppPage404 } from '../../components/App/AppPage404';
-import { AppHeader } from '../../components/App/Header/AppHeader';
-import { UIPageLayout } from '../../components/UIPage/UIPageLayout';
+import { AppPageTitle } from '../../components/App/AppPage.tsx';
+import { AppPage404 } from '../../components/App/AppPage404.tsx';
+import { AppHeader } from '../../components/App/Header/AppHeader.tsx';
+import { UIPageLayout } from '../../components/UIPage/UIPageLayout.tsx';
 
 export function Outgoing(): JSX.Element {
   const [searchParams] = useSearchParams<{ url: string }>();

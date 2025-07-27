@@ -1,5 +1,5 @@
 import type { JSX } from 'solid-js';
-import { LinkExternal } from '../LinkExternal/LinkExternal';
+import { LinkExternal } from '../LinkExternal/LinkExternal.tsx';
 
 export function AppFooter(): JSX.Element {
   return (

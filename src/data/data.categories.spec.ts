@@ -1,8 +1,8 @@
 import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
-import { DEV_TOOL_ARTICLE_CATEGORY_SCHEMA } from '../models/DevToolArticleCategory';
-import categoriesData from './categories.json';
+import { DEV_TOOL_ARTICLE_CATEGORY_SCHEMA } from '../models/DevToolArticleCategory.ts';
+import categoriesData from './categories.json' with { type: 'json' };
 
 describe('data - categories', () => {
   it('should follow schema', () => {

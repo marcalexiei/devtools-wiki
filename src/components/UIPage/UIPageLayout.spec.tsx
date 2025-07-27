@@ -1,6 +1,6 @@
 import { render, screen } from '@solidjs/testing-library';
 import { describe, expect, it } from 'vitest';
-import { UIPageLayout } from './UIPageLayout';
+import { UIPageLayout } from './UIPageLayout.tsx';
 
 describe('<UIPageLayout />', () => {
   it('should print content', () => {

@@ -1,5 +1,5 @@
 import type { JSX } from 'solid-js';
-import type { ThemeValue } from '../../../Theme/ThemeContext';
+import type { ThemeValue } from '../../../Theme/ThemeContext.tsx';
 
 interface AppHeaderThemeSwitchIconProps {
   themeValue: ThemeValue;

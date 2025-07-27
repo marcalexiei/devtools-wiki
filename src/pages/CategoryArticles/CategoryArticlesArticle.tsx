@@ -1,7 +1,7 @@
 import type { JSX } from 'solid-js';
 import { For } from 'solid-js';
-import { LinkExternal } from '../../components/LinkExternal/LinkExternal';
-import type { DevToolArticle } from '../../models/DevToolArticle';
+import { LinkExternal } from '../../components/LinkExternal/LinkExternal.tsx';
+import type { DevToolArticle } from '../../models/DevToolArticle.ts';
 
 interface CategoryArticlesProps {
   article: DevToolArticle;

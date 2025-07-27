@@ -1,6 +1,6 @@
 import type { JSX } from 'solid-js';
-import { AppPage, AppPageTitle } from '../../components/App/AppPage';
-import { LinkExternal } from '../../components/LinkExternal/LinkExternal';
+import { AppPage, AppPageTitle } from '../../components/App/AppPage.tsx';
+import { LinkExternal } from '../../components/LinkExternal/LinkExternal.tsx';
 
 export function Home(): JSX.Element {
   return (

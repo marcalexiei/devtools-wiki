@@ -1,8 +1,11 @@
 import type { JSX } from 'solid-js';
 import { For } from 'solid-js';
-import { type ThemeValue, useThemeContext } from '../../../Theme/ThemeContext';
-import { UISwitchItem, UISwitchRoot } from '../../../UISwitch/UISwitch';
-import { AppHeaderThemeSwitchIcon } from './AppHeaderThemeSwitchIcon';
+import {
+  type ThemeValue,
+  useThemeContext,
+} from '../../../Theme/ThemeContext.tsx';
+import { UISwitchItem, UISwitchRoot } from '../../../UISwitch/UISwitch.tsx';
+import { AppHeaderThemeSwitchIcon } from './AppHeaderThemeSwitchIcon.tsx';
 
 const THEME_VALUES: Array<ThemeValue> = ['dark', 'system', 'light'];
 

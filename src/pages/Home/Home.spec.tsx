@@ -2,9 +2,9 @@ import { createMemoryHistory, MemoryRouter, Route } from '@solidjs/router';
 import { render, screen } from '@solidjs/testing-library';
 import type { JSX, ParentProps } from 'solid-js';
 import { describe, expect, it } from 'vitest';
-import { AppContextProvider } from '../../components/App/AppContext';
-import { ThemeContextProvider } from '../../components/Theme/ThemeContext';
-import { Home } from './Home';
+import { AppContextProvider } from '../../components/App/AppContext.tsx';
+import { ThemeContextProvider } from '../../components/Theme/ThemeContext.tsx';
+import { Home } from './Home.tsx';
 
 describe('<Home />', () => {
   function Wrapper(props: ParentProps): JSX.Element {

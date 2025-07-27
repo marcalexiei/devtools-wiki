@@ -1,9 +1,9 @@
 import { createMemoryHistory, MemoryRouter, Route } from '@solidjs/router';
 import { render, screen } from '@solidjs/testing-library';
 import { afterEach, describe, expect, it, vitest } from 'vitest';
-import { AppPage404 } from '../../components/App/AppPage404';
-import { ThemeContextProvider } from '../../components/Theme/ThemeContext';
-import { Outgoing } from './Outgoing';
+import { AppPage404 } from '../../components/App/AppPage404.tsx';
+import { ThemeContextProvider } from '../../components/Theme/ThemeContext.tsx';
+import { Outgoing } from './Outgoing.tsx';
 
 vitest.mock('../../components/App/AppPage404', () => ({
   AppPage404: vitest.fn(),

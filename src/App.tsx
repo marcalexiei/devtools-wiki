@@ -2,9 +2,9 @@ import { createQuery } from '@tanstack/solid-query';
 import type { JSX, ParentProps } from 'solid-js';
 import { Match, Switch } from 'solid-js';
 import { z } from 'zod';
-import { AppContextProvider } from './components/App/AppContext';
-import { UIPageLayoutLoading } from './components/UIPage/UIPageLayoutLoading';
-import { DEV_TOOL_ARTICLE_CATEGORY_SCHEMA } from './models/DevToolArticleCategory';
+import { AppContextProvider } from './components/App/AppContext.tsx';
+import { UIPageLayoutLoading } from './components/UIPage/UIPageLayoutLoading.tsx';
+import { DEV_TOOL_ARTICLE_CATEGORY_SCHEMA } from './models/DevToolArticleCategory.ts';
 
 export function App(props: ParentProps): JSX.Element {
   const query = createQuery(() => ({

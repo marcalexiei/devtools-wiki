@@ -1,7 +1,7 @@
 import type { JSX } from 'solid-js';
 import { For, Match, Switch } from 'solid-js';
-import type { DevToolArticle } from '../../models/DevToolArticle';
-import { CategoryArticlesArticle } from './CategoryArticlesArticle';
+import type { DevToolArticle } from '../../models/DevToolArticle.ts';
+import { CategoryArticlesArticle } from './CategoryArticlesArticle.tsx';
 
 import './CategoryArticlesView.scss';
 
