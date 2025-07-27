@@ -23,14 +23,6 @@ export default defineConfig({
   resolve: {
     conditions: ['development', 'browser'],
   },
-  css: {
-    /** @see https://vitejs.dev/config/shared-options.html#css-preprocessoroptions */
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler',
-      },
-    },
-  },
   plugins: [
     /*
     Uncomment the following line to enable solid-devtools.

@@ -10,12 +10,4 @@ export default defineConfig({
   build: {
     target: 'esnext',
   },
-  css: {
-    /** @see https://vitejs.dev/config/shared-options.html#css-preprocessoroptions */
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler',
-      },
-    },
-  },
 });
