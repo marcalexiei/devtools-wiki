@@ -11,7 +11,7 @@
     "url": "git+https://github.com/marcalexiei/devtools-wiki.git"
   },
   "type": "module",
-  "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971",
+  "packageManager": "pnpm@11.0.6+sha512.97f906e1da2bedac3df83cadae04b4753a130092dd49d55cd36825ad3e623e9df3f97754f8f259e699172a360fac569acf2f908e7732bdae3eddb2dcf7e121fd",
   "scripts": {
     "dev": "vite",
     "dev:typecheck": "pnpm run typecheck -- --watch",
@@ -41,7 +41,7 @@
     "sass-embedded": "1.89.2",
     "typescript": "5.8.3",
     "vite": "7.0.6",
-    "vite-plugin-solid": "2.11.7",
+    "vite-plugin-solid": "2.11.12",
     "vitest": "3.2.4"
   },
   "pnpm": {
