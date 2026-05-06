@@ -23,7 +23,7 @@ jobs:
       fail-fast: true
       matrix:
         script:
-          - format
+          - format:check
           - lint
           - typecheck
           - build

@@ -19,8 +19,8 @@
     "build:preview": "pnpm run build && vite preview",
     "test": "vitest",
     "typecheck": "tsc --project tsconfig.json --noEmit",
-    "format": "biome format .",
-    "format:fix": "biome format . --write",
+    "format": "biome format . --write",
+    "format:check": "biome format .",
     "lint": "biome lint .",
     "lint:fix": "biome lint . --write",
     "check-all": "pnpm run \"/^(build|lint|format|typecheck)$/\" && pnpm run test --run"
