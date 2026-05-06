@@ -1,6 +1,6 @@
 # Devtools Wiki
 
-[![CI](https://github.com/marcalexiei/devtools-wiki/actions/workflows/CI.yml/badge.svg)](https://github.com/marcalexiei/devtools-wiki/actions/workflows/CI.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/marcalexiei/devtools-wiki/ci.yml?style=for-the-badge&logo=github&event=push&label=CI)](https://github.com/marcalexiei/devtools-wiki/actions/workflows/ci.yml)
 
 List to keep track of development tools in a more funny way than having text notes.
 
