@@ -13,6 +13,10 @@ export default defineConfig({
     // if you have few tests, try commenting this
     // out to improve performance:
     isolate: true,
+    poolOptions: {
+      // Node 25+ ships a global `localStorage` that shadows happy-dom's
+      forks: { execArgv: ['--no-experimental-webstorage'] },
+    },
   },
   server: {
     port: 3000,
