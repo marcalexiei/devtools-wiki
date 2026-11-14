@@ -11,7 +11,7 @@
     "url": "git+https://github.com/marcalexiei/devtools-wiki.git"
   },
   "type": "module",
-  "packageManager": "pnpm@11.0.6+sha512.97f906e1da2bedac3df83cadae04b4753a130092dd49d55cd36825ad3e623e9df3f97754f8f259e699172a360fac569acf2f908e7732bdae3eddb2dcf7e121fd",
+  "packageManager": "pnpm@12.18.0+sha512.9d7882d5dc82147ecfc4e062aa34834e0ad0296710a1837a1115ae012127d36b7109e321ac1598a1dd0a65597681b1e99917e12ed0d749eae91187943363beb3",
   "scripts": {
     "dev": "vite",
     "dev:typecheck": "pnpm run typecheck -- --watch",
