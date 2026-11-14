@@ -5,3 +5,5 @@ minimumReleaseAge: 1440
 
 dedupePeers: true
 dedupePeerDependents: true
+
+autoDedupe: true
