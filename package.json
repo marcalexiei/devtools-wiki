@@ -23,7 +23,7 @@
     "format:check": "biome format .",
     "lint": "biome lint .",
     "lint:fix": "biome lint . --write",
-    "check-all": "pnpm run \"/^(build|lint|format|typecheck)$/\" && pnpm run test --run"
+    "validate": "pnpm run \"/^(build|lint|format|typecheck)$/\" && pnpm run test --run"
   },
   "dependencies": {
     "@solidjs/router": "0.15.3",

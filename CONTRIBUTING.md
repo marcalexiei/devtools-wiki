@@ -15,7 +15,7 @@ pnpm dev
 To run all checks locally:
 
 ```shell
-pnpm check-all
+pnpm validate
 ```
 
 ## Adding dependency or a dev dependency
